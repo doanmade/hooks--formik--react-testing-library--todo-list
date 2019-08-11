@@ -6,6 +6,11 @@ import initialTodos from '../data';
 
 const handleToggleComplete = jest.fn();
 
+/*  
+What to test?
+- Does it show a list of todos?
+*/
+
 describe('<TodoList />', () => {
   it('renders without crashing', () => {
     render(
@@ -14,5 +19,15 @@ describe('<TodoList />', () => {
         handleToggleComplete={handleToggleComplete}
       />
     );
+  });
+  it('should show a list of todos', () => {
+    const { getAllByTestId } = render(
+      <TodoList
+        todos={initialTodos}
+        handleToggleComplete={handleToggleComplete}
+      />
+    );
+    const todos = getAllByTestId('todo');
+    expect(todos.length).toBe(initialTodos.length);
   });
 });
