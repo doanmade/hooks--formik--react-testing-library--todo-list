@@ -7,6 +7,6 @@ export default [
   {
     task: 'Bake Cookies',
     id: '416096a9-c263-490e-9ebc-b36692849edc',
-    completed: false
+    completed: true
   }
 ];
